@@ -1,0 +1,17 @@
+<div class="todos">
+  <div class="todos_inner">
+    <div class="todos_inputSection">
+      <div>
+        <input [(ngModel)]="todoContent" type="text" placeholder="Write Todos" />
+        <button (click)="addTodo()">Add</button>
+      </div>
+    </div>
+
+    <div *ngFor="let todo of todos; let index = index;"  class="todos_content"  >
+      <h1 (click)="togglerDone(index)" [className]="todo.completed ? 'active' : 'inactive'"> {{todo?.content}}</h1>
+      <div>
+        <button (click)="delete(index)" >Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
